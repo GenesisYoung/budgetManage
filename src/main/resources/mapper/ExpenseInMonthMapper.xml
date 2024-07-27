@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.genesisstudio.budgetManage.mapper.ExpenseInMonthMapper">
+
+    <resultMap id="BaseResultMap" type="com.genesisstudio.budgetManage.domain.ExpenseInMonth">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="accountId" column="account_id" jdbcType="INTEGER"/>
+            <result property="expenseTotal" column="expense_total" jdbcType="DOUBLE"/>
+            <result property="startDate" column="start_date" jdbcType="TIMESTAMP"/>
+            <result property="endDate" column="end_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,account_id,expense_total,
+        start_date,end_date
+    </sql>
+</mapper>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.genesisstudio.budgetManage.mapper.BudgetTableMapper">
+
+    <resultMap id="BaseResultMap" type="com.genesisstudio.budgetManage.domain.BudgetTable">
+            <id property="budgetId" column="budget_id" jdbcType="BIGINT"/>
+            <result property="budgetName" column="budget_name" jdbcType="VARCHAR"/>
+            <result property="budgetTarget" column="budget_target" jdbcType="DOUBLE"/>
+            <result property="budgetCurrent" column="budget_current" jdbcType="DOUBLE"/>
+            <result property="beginDate" column="begin_date" jdbcType="TIMESTAMP"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="accountId" column="account_id" jdbcType="BIGINT"/>
+            <result property="isFinished" column="is_finished" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        budget_id,budget_name,budget_target,
+        budget_current,begin_date,description,
+        account_id,is_finished
+    </sql>
+</mapper>

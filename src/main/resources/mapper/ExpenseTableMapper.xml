@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.genesisstudio.budgetManage.mapper.ExpenseTableMapper">
+
+    <resultMap id="BaseResultMap" type="com.genesisstudio.budgetManage.domain.ExpenseTable">
+            <id property="expenseId" column="expense_id" jdbcType="BIGINT"/>
+            <result property="expenseTag" column="expense_tag" jdbcType="VARCHAR"/>
+            <result property="expenseAmount" column="expense_amount" jdbcType="DOUBLE"/>
+            <result property="accountId" column="account_id" jdbcType="BIGINT"/>
+            <result property="recordDate" column="record_date" jdbcType="TIMESTAMP"/>
+            <result property="isActive" column="is_active" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        expense_id,expense_tag,expense_amount,
+        account_id,record_date,is_active
+    </sql>
+</mapper>

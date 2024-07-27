@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.genesisstudio.budgetManage.mapper.PeriodBudgetMapper">
+
+    <resultMap id="BaseResultMap" type="com.genesisstudio.budgetManage.domain.PeriodBudget">
+            <id property="periodId" column="period_id" jdbcType="BIGINT"/>
+            <result property="periodStart" column="period_start" jdbcType="TIMESTAMP"/>
+            <result property="periodEnd" column="period_end" jdbcType="TIMESTAMP"/>
+            <result property="periodTotal" column="period_total" jdbcType="DOUBLE"/>
+            <result property="residualAmount" column="residual_amount" jdbcType="DOUBLE"/>
+            <result property="tags" column="tags" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        period_id,period_start,period_end,
+        period_total,residual_amount,tags
+    </sql>
+</mapper>
