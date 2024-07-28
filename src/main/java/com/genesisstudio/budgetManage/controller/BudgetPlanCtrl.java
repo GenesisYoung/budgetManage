@@ -68,4 +68,9 @@ public class BudgetPlanCtrl {
         }
         return responseObjectVO;
     }
+    @RequestMapping("fetchActivePlan")
+    private ResponseObjectVO fetchActivePlan(String id) {
+        ResponseObjectVO responseObjectVO = new ResponseObjectVO(Message.NO_DATA.getMsg(), false);
+        return responseObjectVO;
+    }
 }

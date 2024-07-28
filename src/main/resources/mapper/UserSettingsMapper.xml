@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.genesisstudio.budgetManage.mapper.UserSettingsMapper">
+
+    <resultMap id="BaseResultMap" type="com.genesisstudio.budgetManage.domain.UserSettings">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="currency" column="currency" jdbcType="VARCHAR"/>
+            <result property="periodstart" column="periodStart" jdbcType="INTEGER"/>
+            <result property="autoAllocation" column="auto_allocation" jdbcType="TINYINT"/>
+            <result property="allocationRule" column="allocation_rule" jdbcType="INTEGER"/>
+            <result property="levelAlpha" column="level_alpha" jdbcType="INTEGER"/>
+            <result property="levelBeta" column="level_beta" jdbcType="INTEGER"/>
+            <result property="levelSigma" column="level_sigma" jdbcType="INTEGER"/>
+            <result property="acountId" column="acount_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,currency,periodStart,
+        auto_allocation,allocation_rule,level_alpha,
+        level_beta,level_sigma,acount_id
+    </sql>
+</mapper>
