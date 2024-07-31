@@ -1,9 +1,11 @@
 package com.genesisstudio.budgetManage.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.genesisstudio.budgetManage.domain.UserSettings;
 import com.genesisstudio.budgetManage.service.UserSettingsService;
 import com.genesisstudio.budgetManage.mapper.UserSettingsMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +16,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserSettingsServiceImpl extends ServiceImpl<UserSettingsMapper, UserSettings>
     implements UserSettingsService{
-
+    @Autowired
+    private UserSettingsMapper userSettingsMapper;
+    public UserSettings findByUserId(String id) {
+        QueryWrapper<UserSettings> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("account_id", id);
+        return userSettingsMapper.selectOne(queryWrapper);
+    }
 }
 
 
