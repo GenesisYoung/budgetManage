@@ -5,6 +5,8 @@ import com.genesisstudio.budgetManage.service.impl.UserSettingsServiceImpl;
 import com.genesisstudio.budgetManage.util.enums.Message;
 import com.genesisstudio.budgetManage.util.vo.ResponseObjectVO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,8 +25,8 @@ public class SettingCtrl {
         }
         return vo;
     }
-    @RequestMapping("updateSettings")
-    public ResponseObjectVO updateSettings(UserSettings settings) {
+    @PostMapping("updateSettings")
+    public ResponseObjectVO updateSettings(@RequestBody UserSettings settings) {
         ResponseObjectVO vo = new ResponseObjectVO(Message.FAIL.getMsg(), false);
         boolean updated = userSettingsService.updateById(settings);
         if (updated) {
